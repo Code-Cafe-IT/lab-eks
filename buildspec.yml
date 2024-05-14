@@ -17,6 +17,7 @@ phases:
         - export KUBECONFIG=$HOME/.kube/config
   build:
     commands:
+      - docker pull $REPOSITORY_URI/golang:1.11.1
       - docker build --tag $REPOSITORY_URI:$TAG .
 
   post_build:
